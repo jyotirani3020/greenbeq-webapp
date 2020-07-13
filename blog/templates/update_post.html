@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% if user.is_superuser %}
+<section class="green-section">
+<div class="container">
+ <h1 class="subheading">Update Post</h1>
+ <div class="form-group">
+ <form enctype='multipart/form-data' method="POST">
+     {% csrf_token %}
+     {{form.as_p}}
+     <button type="submit" class="btn btn-primary" >Update</button>
+ </form>
+</div>
+</div>
+</section>
+{% endif %}
+{% endblock %}

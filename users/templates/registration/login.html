@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<section class="green-section">
+<div class="container">
+ <h1 class="subheading">Login...</h1>
+ <div class="form-group">
+ <form enctype='multipart/form-data' method="POST">
+     {% csrf_token %}
+     {{form.as_p}}
+     <button type="submit" class="btn btn-primary" >Login</button>
+ </form>
+</div>
+</div>
+</section>
+
+{% endblock %}
